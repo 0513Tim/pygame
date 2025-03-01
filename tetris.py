@@ -347,7 +347,7 @@ clock = pygame.time.Clock()
 #print(pygame.font.get_fonts())
 
 # 設定字型-黑體.
-font = pygame.font.SysFont("simsunnsimsun", 24)
+font = pygame.font.SysFont("microsoft jhenghei", 24)
 
 class Box(object):
     #-------------------------------------------------------------------------
