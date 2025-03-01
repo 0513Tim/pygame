@@ -3,7 +3,7 @@ from pygame.locals import *
 
 # 初始化
 pygame.init()
-FPS = 60 # 設定每秒幾禎
+FPS = 10 # 設定每秒幾禎
 Clock = pygame.time.Clock() # Clock
 
 # 設定視窗
@@ -14,7 +14,8 @@ pygame.display.set_caption('Cat ')
 black = (0, 0, 0)
 catImg = pygame.image.load('cat.png')
 catImg = pygame.transform.scale(catImg, (200, 200))  # 調整圖片大小為 50x50
-# 設定貓的x y 軸
+font = pygame.font.SysFont("Microsoft JhengHei", 24)
+# 設定貓的 x y 軸
 catx = 100
 caty = 100
 direction = 'right' # 一開始的方向
@@ -42,5 +43,8 @@ while True: # the main game loop
             pygame.quit()
             sys.exit()
     #記得更新畫面
+    DISPLAYSURF.blit(font.render(str(Clock.get_fps()), True, (255, 255, 255)), (10, 10))
+    print(Clock.get_fps())
+    
     pygame.display.update()
     Clock.tick(FPS)
